@@ -4,7 +4,11 @@
   "description": "Page loader tool",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest --bail"
+  },
+  "type": "module",
+  "simple-git-hooks": {
+    "pre-push": "make lint"
   },
   "bin": {
     "nodejs-package": "bin/nodejs-package.js"
