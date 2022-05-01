@@ -20,11 +20,11 @@
   "author": "Vasilii Boldurean",
   "license": "ISC",
   "dependencies": {
-    "@jest/globals": "^28.0.1",
     "axios": "^0.27.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@jest/globals": "^28.0.3",
     "eslint": "^8.14.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
