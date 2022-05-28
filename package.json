@@ -11,7 +11,7 @@
     "pre-push": "make lint"
   },
   "bin": {
-    "nodejs-package": "bin/nodejs-package.js"
+    "page-loader": "bin/page-loader.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.1",
-    "lodash": "^4.17.21"
+    "commander": "^9.2.0",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@jest/globals": "^28.0.3",
