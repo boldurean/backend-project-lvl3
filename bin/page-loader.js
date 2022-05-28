@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import app from '../src/app.js';
+import app from '../index.js';
 
 const defaultPath = process.cwd();
 
@@ -12,5 +12,3 @@ program
   .arguments('<url>')
   .action((url, output) => app(url, output))
   .parse(process.argv);
-
-const options = program.opts();

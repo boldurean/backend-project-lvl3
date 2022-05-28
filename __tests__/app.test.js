@@ -2,7 +2,7 @@ import * as fs from 'node:fs/promises';
 import { tmpdir } from 'os';
 import { join } from 'path';
 import nock from 'nock';
-import app from '../src/app.js';
+import app from '../index.js';
 import { generateFileName } from '../src/utils.js';
 
 let tempDir;
