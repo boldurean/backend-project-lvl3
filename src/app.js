@@ -6,8 +6,7 @@ const defaultPath = process.cwd();
 
 const app = (url, output) => {
   if (!url) {
-    console.log('Missing Url, ending process.');
-    return;
+    throw new Error('Missing Url, ending process.');
   }
 
   const outputDir = output?.output ?? defaultPath;
@@ -24,7 +23,7 @@ const app = (url, output) => {
     })
     .catch((e) => console.error(e));
 
-  return Promise.all([response])
+  return Promise.all([response]);
 };
 
 export default app;

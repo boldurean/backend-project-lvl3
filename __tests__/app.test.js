@@ -8,34 +8,25 @@ import { generateFileName } from '../src/utils.js';
 let tempDir;
 const testUrl = 'https://ru.hexlet.io/courses';
 const fileName = generateFileName(testUrl);
-const stubData = 'HEYYAA'
+const stubData = 'HEYYAA';
 
 beforeEach(async () => {
   tempDir = await fs.mkdtemp(join(tmpdir(), 'page-loader-'));
 });
 
+test('Missing url as param', async () => {
+  expect(() => app()).toThrow('Missing Url, ending process.');
+});
+
 test('Does file successfully saving', async () => {
   const scope = nock(testUrl)
     .get('')
-    .reply(200, stubData)
+    .reply(200, stubData);
 
   await app(testUrl, { output: tempDir });
 
   const data = await fs.readFile(join(tempDir, fileName), 'utf-8');
 
-  scope.done();
-
-  expect(data).toBe(stubData);
-});
-
-test('Save url without passing path', async () => {
-  const scope = nock(testUrl)
-    .get('')
-    .reply(200, stubData)
-
-  await app(testUrl);
-
-  const data = await fs.readFile(join(process.cwd(), fileName), 'utf-8');
   scope.done();
 
   expect(data).toBe(stubData);
