@@ -1,5 +1,4 @@
 // @ts-check
+import app from './src/app.js';
 
-import half from './src/half.js';
-
-export default half;
+export default app;
